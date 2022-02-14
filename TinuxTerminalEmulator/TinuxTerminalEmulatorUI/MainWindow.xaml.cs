@@ -80,18 +80,17 @@ namespace LinuxTerminalEmulatorUI
 
         private void MainTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //var code = MainTextBox.Text;
 
-            //using (StreamWriter swriter = commandDir.CreateText())
-            //{
-            //    swriter.WriteLine(code);
-            //}
         }
 
         private void MainTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
+                // Does not add enters in the begining
+
+                e.Handled = true;
+
                 // First translation
                 string code = MainTextBox.Text;
 
@@ -168,6 +167,14 @@ namespace LinuxTerminalEmulatorUI
                 ld += "\\";
 
                 LineModel.LastLineDirectory = ld;
+
+                // Check what each command is
+
+                this.CheckCommand();
+
+                // Set couror to the end of a file
+
+                MainTextBox.Select(MainTextBox.Text.Length, 0);
             }
 
             else if (e.Key == Key.Up)
