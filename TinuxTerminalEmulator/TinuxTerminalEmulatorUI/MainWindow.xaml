@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" >
     <Grid>
-        <TextBox Name="MainTextBox" Foreground="LimeGreen" Background="Black" KeyDown="MainTextBox_KeyDown" Text="C:\> " TextChanged="MainTextBox_TextChanged" AcceptsReturn="True" FontSize="16" PreviewKeyDown="MainTextBox_PreviewKeyDown"/>
+        <TextBox Name="MainTextBox" Foreground="LimeGreen" Background="Black" Text="C:\> " AcceptsReturn="True" FontSize="16" PreviewKeyDown="MainTextBox_PreviewKeyDown"/>
     </Grid>
 </Window>

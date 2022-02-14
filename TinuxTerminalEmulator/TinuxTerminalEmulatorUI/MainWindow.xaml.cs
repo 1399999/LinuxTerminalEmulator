@@ -1,19 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace LinuxTerminalEmulatorUI
+﻿namespace LinuxTerminalEmulatorUI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,24 +13,6 @@ namespace LinuxTerminalEmulatorUI
         FileInfo commandDir = new FileInfo(@"C:\LinuxTerminalEmulator\Commands.txt");
         FileInfo translatedCommandLineDir = new FileInfo(@"C:\LinuxTerminalEmulator\TranslatedCommandLines.txt");
         FileInfo translatedCommandDir = new FileInfo(@"C:\LinuxTerminalEmulator\TranslatedCommands.txt");
-
-        private void MainTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Return)
-            {
-                //MainTextBox.Text = commandDir.GetLastLine();
-            }
-
-            else if (e.Key == Key.Up)
-            {
-
-            }
-
-            else if (e.Key == Key.Down)
-            {
-
-            }
-        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -78,11 +45,6 @@ namespace LinuxTerminalEmulatorUI
             }
         }
 
-        private void MainTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void MainTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -112,8 +74,6 @@ namespace LinuxTerminalEmulatorUI
                         }
                     }
                 }
-
-                //List<string> corLines = commandDir.ReadLineByListIndex(commandLines);
 
                 using (StreamWriter swriter = translatedCommandLineDir.CreateText())
                 {
@@ -172,9 +132,10 @@ namespace LinuxTerminalEmulatorUI
 
                 this.CheckCommand();
 
-                // Set couror to the end of a file
+                // Set couror to the end of the textbox
 
                 MainTextBox.Select(MainTextBox.Text.Length, 0);
+                
             }
 
             else if (e.Key == Key.Up)
