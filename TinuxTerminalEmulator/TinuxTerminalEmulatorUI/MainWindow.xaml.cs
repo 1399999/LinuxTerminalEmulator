@@ -1,4 +1,6 @@
-﻿namespace LinuxTerminalEmulatorUI
+﻿using TinuxTerminalEmulatorUI;
+
+namespace LinuxTerminalEmulatorUI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
