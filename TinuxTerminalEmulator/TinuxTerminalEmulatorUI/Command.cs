@@ -1,6 +1,4 @@
-﻿using TinuxTerminalEmulatorUI;
-
-namespace LinuxTerminalEmulatorUI;
+﻿namespace LinuxTerminalEmulatorUI;
 
 public static class Command
 {
@@ -18,7 +16,15 @@ public static class Command
         }
         else if (LineModel.LastLineCommand.Contains("cat "))
         {
-            mainwindow.ShowFileContents();
+            mainwindow.ShowFileContentsCommand();
+        }
+        else if (LineModel.LastLineCommand.Contains("mkdir "))
+        {
+            mainwindow.MakeDirectoryCommand();
+        }
+        else if (LineModel.LastLineCommand.Contains("rm "))
+        {
+            mainwindow.DeleteDirectoryCommand();
         }
         else
         {
