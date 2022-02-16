@@ -26,9 +26,17 @@ public static class Command
         {
             mainwindow.DeleteDirectoryCommand();
         }
+        else if (LineModel.LastLineCommand.Contains("cd "))
+        {
+            mainwindow.ChangeDirectoryCommand();
+        }
         else
         {
-
+            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.MainTextBox.Text += "The command is unregognized.";
+            mainwindow.MainTextBox.Text += "\n\n";
+            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
+            mainwindow.MainTextBox.Text += "> ";
         }
     }
 }
