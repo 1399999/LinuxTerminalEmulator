@@ -8,7 +8,7 @@ public static class Command
         {
             mainwindow.GetEndingTextSpecial();
         }
-        else if (LineModel.LastLineCommand == "dir" || LineModel.LastLineCommand == "ls")
+        else if (LineModel.LastLineCommand == "dir")
         {
             mainwindow.DirectoryCommand();
         }
@@ -55,6 +55,10 @@ public static class Command
         else if (LineModel.LastLineCommand.Contains("findtxt "))
         {
             mainwindow.FindTextInFileCommand();
+        }
+        else if (LineModel.LastLineCommand.Contains("ls "))
+        {
+            mainwindow.ListCommand();
         }
         else if (LineModel.LastLineCommand == "exit")
         {
