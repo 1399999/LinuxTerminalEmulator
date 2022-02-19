@@ -48,6 +48,10 @@ public static class Command
         {
             mainwindow.CreateFileCommand();
         }
+        else if (LineModel.LastLineCommand.Contains("locate "))
+        {
+            mainwindow.LocateFileCommand();
+        }
         else if (LineModel.LastLineCommand == "exit")
         {
             mainwindow.Close();
