@@ -22,9 +22,7 @@ public static class MakeDirectory
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully created.";
-                mainwindow.MainTextBox.Text += "\n\n";
-                mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                mainwindow.MainTextBox.Text += "> ";
+                mainwindow.GetEndingText();
             }
             else
             {
@@ -32,9 +30,7 @@ public static class MakeDirectory
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " alrady exists.";
-                mainwindow.MainTextBox.Text += "\n\n";
-                mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                mainwindow.MainTextBox.Text += "> ";
+                mainwindow.GetEndingText();
             }
 
         }
@@ -42,9 +38,7 @@ public static class MakeDirectory
         {
             mainwindow.MainTextBox.Text += "\n";
             mainwindow.MainTextBox.Text += "An error occured while create the directory.";
-            mainwindow.MainTextBox.Text += "\n\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += "> ";
+            mainwindow.GetEndingText();
         }
     }
 }

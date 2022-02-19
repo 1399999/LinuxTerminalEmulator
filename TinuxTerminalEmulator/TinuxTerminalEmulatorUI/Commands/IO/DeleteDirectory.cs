@@ -10,22 +10,32 @@ public static class DeleteDirectory
         var cutCommand = command.Substring(3);
 
         var fullPath = path + cutCommand;
-
-        DirectoryInfo newDir = new DirectoryInfo(fullPath);
-
+        
         try
         {
-            if (Directory.Exists(newDir.ToString()))
+            if (Directory.Exists(fullPath))
             {
-                    newDir.Delete();
+                DirectoryInfo dir = new DirectoryInfo(fullPath);
 
-                    mainwindow.MainTextBox.Text += "\n";
-                    mainwindow.MainTextBox.Text += "The directory ";
-                    mainwindow.MainTextBox.Text += fullPath;
-                    mainwindow.MainTextBox.Text += " was succesfully deleted.";
-                    mainwindow.MainTextBox.Text += "\n\n";
-                    mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                    mainwindow.MainTextBox.Text += "> ";
+                dir.Delete();
+
+                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.MainTextBox.Text += "The directory ";
+                mainwindow.MainTextBox.Text += fullPath;
+                mainwindow.MainTextBox.Text += " was succesfully deleted.";
+                mainwindow.GetEndingText();
+            }
+            else if (File.Exists(fullPath))
+            {
+                FileInfo file = new FileInfo(fullPath);
+
+                file.Delete();
+
+                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.MainTextBox.Text += "The file ";
+                mainwindow.MainTextBox.Text += fullPath;
+                mainwindow.MainTextBox.Text += " was succesfully deleted.";
+                mainwindow.GetEndingText();
             }
             else
             {
@@ -33,19 +43,54 @@ public static class DeleteDirectory
                 mainwindow.MainTextBox.Text += "The path ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " does not exist";
-                mainwindow.MainTextBox.Text += "\n\n";
-                mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                mainwindow.MainTextBox.Text += "> ";
+                mainwindow.GetEndingText();
             }
-            
+
         }
         catch
         {
             mainwindow.MainTextBox.Text += "\n";
             mainwindow.MainTextBox.Text += "An error occured while deleting the directory.";
-            mainwindow.MainTextBox.Text += "\n\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += "> ";
+            mainwindow.GetEndingText();
+        }
+    }
+
+    public static void DeleteEmptyDirectory(this MainWindow mainwindow)
+    {
+        try
+        {
+            var path = LineModel.LastLineDirectory;
+
+            DirectoryInfo dir = new DirectoryInfo(path);
+
+            var files = dir.GetFiles();
+
+            var dirs = dir.GetDirectories();
+
+            if (files.Length == 0 && dirs.Length == 0)
+            {
+                dir.Delete();
+
+                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.MainTextBox.Text += "The directory ";
+                mainwindow.MainTextBox.Text += path;
+                mainwindow.MainTextBox.Text += " was succesfully deleted.";
+                mainwindow.GetEndingText();
+            }
+            else
+            {
+                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.MainTextBox.Text += "The directory ";
+                mainwindow.MainTextBox.Text += path;
+                mainwindow.MainTextBox.Text += " contans other directories/files so it can olny be deleted by using the rm command.";
+                mainwindow.GetEndingText();
+            }
+        }
+        catch
+        {
+            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.MainTextBox.Text += "An error occured while deleting the directory.";
+            mainwindow.GetEndingText();
         }
     }
 }

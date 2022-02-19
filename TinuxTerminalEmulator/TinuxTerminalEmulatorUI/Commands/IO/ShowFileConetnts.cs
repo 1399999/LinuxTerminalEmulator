@@ -23,18 +23,14 @@ public static class ShowFileConetnts
                     mainwindow.MainTextBox.Text += line;
                 }
 
-                mainwindow.MainTextBox.Text += "\n\n";
-                mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                mainwindow.MainTextBox.Text += "> ";
+                mainwindow.GetEndingText();
             }
             catch
             {
                 mainwindow.MainTextBox.Text += "\n";
                 mainwindow.MainTextBox.Text += "An error occured while trying to display the contents of ";
                 mainwindow.MainTextBox.Text += cutCommand;
-                mainwindow.MainTextBox.Text += "\n\n";
-                mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                mainwindow.MainTextBox.Text += "> ";
+                mainwindow.GetEndingText();
             }
         }
         else
@@ -43,9 +39,7 @@ public static class ShowFileConetnts
             mainwindow.MainTextBox.Text += "The path ";
             mainwindow.MainTextBox.Text += fullPath;
             mainwindow.MainTextBox.Text += " does not exist";
-            mainwindow.MainTextBox.Text += "\n\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += "> ";
+            mainwindow.GetEndingText();
         }
     }
 }

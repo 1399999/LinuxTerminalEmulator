@@ -33,7 +33,7 @@ public static class ChangeDirectory
 
             mainwindow.MainTextBox.Text += "\n\n";
             mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += @"> ";
+            mainwindow.MainTextBox.Text += "> ";
         }
         else
         {
@@ -46,20 +46,17 @@ public static class ChangeDirectory
                 if (Directory.Exists(newDir.ToString()))
                 {
                     LineModel.LastLineDirectory += cutCommand;
+                    LineModel.LastLineDirectory += "\\";
 
-                    mainwindow.MainTextBox.Text += "\n\n";
-                    mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                    mainwindow.MainTextBox.Text += "\\> ";
+                    mainwindow.GetEndingText();
                 }
                 else
                 {
                     mainwindow.MainTextBox.Text += "\n";
                     mainwindow.MainTextBox.Text += "The directory ";
                     mainwindow.MainTextBox.Text += fullPath;
-                    mainwindow.MainTextBox.Text += " alrady exists.";
-                    mainwindow.MainTextBox.Text += "\n\n";
-                    mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                    mainwindow.MainTextBox.Text += "> ";
+                    mainwindow.MainTextBox.Text += " deos not exist.";
+                    mainwindow.GetEndingText();
                 }
 
             }
@@ -67,11 +64,9 @@ public static class ChangeDirectory
             {
                 mainwindow.MainTextBox.Text += "\n";
                 mainwindow.MainTextBox.Text += "An error occured while create the directory.";
-                mainwindow.MainTextBox.Text += "\n\n";
-                mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-                mainwindow.MainTextBox.Text += "> ";
+                mainwindow.GetEndingText();
             }
         }
-    }      
+    }   
 }
 

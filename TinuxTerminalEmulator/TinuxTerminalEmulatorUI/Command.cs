@@ -6,9 +6,7 @@ public static class Command
     {
         if (LineModel.LastLineCommand == "")
         {
-            mainwindow.MainTextBox.Text += "\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += "> ";
+            mainwindow.GetEndingTextSpecial();
         }
         else if (LineModel.LastLineCommand == "dir" || LineModel.LastLineCommand == "ls")
         {
@@ -30,13 +28,50 @@ public static class Command
         {
             mainwindow.ChangeDirectoryCommand();
         }
+        else if (LineModel.LastLineCommand.Contains("dir -p "))
+        {
+            mainwindow.DirectoryPropertyCommand();
+        }
+        else if (LineModel.LastLineCommand.Contains("cp "))
+        {
+            mainwindow.CopyFileCommand();
+        }
+        else if (LineModel.LastLineCommand.Contains("mv "))
+        {
+            mainwindow.MoveFileCommand();
+        }
+        else if (LineModel.LastLineCommand == "exit")
+        {
+            mainwindow.Close();
+        }
+        else if (LineModel.LastLineCommand == "rmdir")
+        {
+            mainwindow.DeleteEmptyDirectory();
+        }
+        else if (LineModel.LastLineCommand == "pwd")
+        {
+            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
+            mainwindow.GetEndingText();
+        }
         else
         {
             mainwindow.MainTextBox.Text += "\n";
             mainwindow.MainTextBox.Text += "The command is unregognized.";
-            mainwindow.MainTextBox.Text += "\n\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += "> ";
+            mainwindow.GetEndingText();
         }
+    }
+
+    public static void GetEndingText(this MainWindow mainwindow)
+    {
+        mainwindow.MainTextBox.Text += "\n\n";
+        mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
+        mainwindow.MainTextBox.Text += "> ";
+    }
+    public static void GetEndingTextSpecial(this MainWindow mainwindow)
+    {
+        mainwindow.MainTextBox.Text += "\n";
+        mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
+        mainwindow.MainTextBox.Text += "> ";
     }
 }
