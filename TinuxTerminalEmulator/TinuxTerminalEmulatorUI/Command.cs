@@ -52,6 +52,10 @@ public static class Command
         {
             mainwindow.LocateFileCommand();
         }
+        else if (LineModel.LastLineCommand.Contains("findtxt "))
+        {
+            mainwindow.FindTextInFileCommand();
+        }
         else if (LineModel.LastLineCommand == "exit")
         {
             mainwindow.Close();

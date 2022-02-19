@@ -4,21 +4,26 @@ public static class DirectoryCommandClass
 {
     public static void DirectoryCommand(this MainWindow mainwindow)
     {
-        var parentDir = LineModel.LastLineDirectory;
-        var folderDirs = Directory.GetDirectories(parentDir);
-        var fileDirs = Directory.GetFiles(parentDir);
+        var path = LineModel.LastLineDirectory;
+        var folderDirs = Directory.GetDirectories(path);
+        var fileDirs = Directory.GetFiles(path);
+        var pathLength = path.Length;
 
         foreach (var dir in folderDirs)
         {
+            var cutDir = dir.Substring(pathLength);
+
             mainwindow.MainTextBox.Text += "\n";
-            mainwindow.MainTextBox.Text += dir;
+            mainwindow.MainTextBox.Text += cutDir;
             mainwindow.MainTextBox.Text += "           <DIR>";
         }
 
         foreach (var file in fileDirs)
         {
+            var cutFile = file.Substring(pathLength);
+
             mainwindow.MainTextBox.Text += "\n";
-            mainwindow.MainTextBox.Text += file;
+            mainwindow.MainTextBox.Text += cutFile;
         }
 
         mainwindow.MainTextBox.Text += "\n\n";
