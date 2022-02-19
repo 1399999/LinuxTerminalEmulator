@@ -55,13 +55,16 @@ public static class DeleteDirectory
         }
     }
 
-    public static void DeleteEmptyDirectory(this MainWindow mainwindow)
+    public static void DeleteEmptyDirectoryCommand(this MainWindow mainwindow)
     {
         try
         {
             var path = LineModel.LastLineDirectory;
-
-            DirectoryInfo dir = new DirectoryInfo(path);
+            var command = LineModel.LastLineCommand;
+            var cutCommand = command.Substring(6);
+            var fullPath = path + cutCommand;
+                
+            DirectoryInfo dir = new DirectoryInfo(fullPath);
 
             var files = dir.GetFiles();
 
@@ -73,7 +76,7 @@ public static class DeleteDirectory
 
                 mainwindow.MainTextBox.Text += "\n";
                 mainwindow.MainTextBox.Text += "The directory ";
-                mainwindow.MainTextBox.Text += path;
+                mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
                 mainwindow.GetEndingText();
             }

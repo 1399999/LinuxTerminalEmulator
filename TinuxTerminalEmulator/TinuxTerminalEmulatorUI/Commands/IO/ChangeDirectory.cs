@@ -31,9 +31,7 @@ public static class ChangeDirectory
 
             LineModel.LastLineDirectory = newPath;
 
-            mainwindow.MainTextBox.Text += "\n\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-            mainwindow.MainTextBox.Text += "> ";
+            mainwindow.GetEndingText();
         }
         else
         {

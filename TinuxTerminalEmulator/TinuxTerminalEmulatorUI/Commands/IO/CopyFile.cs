@@ -27,7 +27,7 @@ public static class CopyFile
 
                 if (toDir.ToString().Contains("\\"))
                 {
-                    File.WriteAllLines(toDir.Name, fileLine);
+                    File.WriteAllLines(toDir.ToString(), fileLine);
                 }
                 else
                 {
@@ -42,10 +42,10 @@ public static class CopyFile
                 mainwindow.MainTextBox.Text += toDir.Name;
                 mainwindow.GetEndingText();
             }
-            catch (Exception ex)
+            catch
             {
                 mainwindow.MainTextBox.Text += "\n";
-                mainwindow.MainTextBox.Text += ex;
+                mainwindow.MainTextBox.Text += "An error occured while copying the file.";
                 mainwindow.GetEndingText();
             }
         }

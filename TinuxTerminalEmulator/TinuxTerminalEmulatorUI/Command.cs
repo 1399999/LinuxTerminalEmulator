@@ -40,13 +40,17 @@ public static class Command
         {
             mainwindow.MoveFileCommand();
         }
+        else if (LineModel.LastLineCommand.Contains("rmdir "))
+        {
+            mainwindow.DeleteEmptyDirectoryCommand();
+        }
+        else if (LineModel.LastLineCommand.Contains("mkfile "))
+        {
+            mainwindow.CreateFileCommand();
+        }
         else if (LineModel.LastLineCommand == "exit")
         {
             mainwindow.Close();
-        }
-        else if (LineModel.LastLineCommand == "rmdir")
-        {
-            mainwindow.DeleteEmptyDirectory();
         }
         else if (LineModel.LastLineCommand == "pwd")
         {

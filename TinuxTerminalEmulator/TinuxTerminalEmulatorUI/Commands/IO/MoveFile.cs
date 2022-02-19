@@ -27,7 +27,7 @@ public static class MoveFile
 
                 if (toDir.ToString().Contains("\\"))
                 {
-                    File.WriteAllLines(toDir.Name, fileLine);
+                    File.WriteAllLines(toDir.ToString(), fileLine);
 
                     copyFile.Delete();
                 }
