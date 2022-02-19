@@ -26,9 +26,7 @@ public static class DirectoryCommandClass
             mainwindow.MainTextBox.Text += cutFile;
         }
 
-        mainwindow.MainTextBox.Text += "\n\n";
-        mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
-        mainwindow.MainTextBox.Text += "> ";
+        mainwindow.GetEndingText();
     }
 
     public static void DirectoryPropertyCommand(this MainWindow mainwindow)
@@ -52,8 +50,6 @@ public static class DirectoryCommandClass
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += file.Length;
             }
-
-            mainwindow.GetEndingText();
         }
         else if (cutCommand.ToLower() == " creation time")
         {
@@ -72,8 +68,6 @@ public static class DirectoryCommandClass
                 mainwindow.MainTextBox.Text += "                     <DIR>                      ";
                 mainwindow.MainTextBox.Text += directory.CreationTime;
             }
-
-            mainwindow.GetEndingText();
         }
         else if (cutCommand.ToLower() == " attributes")
         {
@@ -92,8 +86,6 @@ public static class DirectoryCommandClass
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += directory.Attributes;
             }
-
-            mainwindow.GetEndingText();
         }
         else if (cutCommand.ToLower() == " -a")
         {
@@ -118,8 +110,8 @@ public static class DirectoryCommandClass
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += directory.Attributes;
             }
-
-            mainwindow.GetEndingText();
         }
+
+        mainwindow.GetEndingText();
     }
 }

@@ -22,15 +22,12 @@ public static class ShowFileConetnts
                     mainwindow.MainTextBox.Text += "\n";
                     mainwindow.MainTextBox.Text += line;
                 }
-
-                mainwindow.GetEndingText();
             }
             catch
             {
                 mainwindow.MainTextBox.Text += "\n";
                 mainwindow.MainTextBox.Text += "An error occured while trying to display the contents of ";
                 mainwindow.MainTextBox.Text += cutCommand;
-                mainwindow.GetEndingText();
             }
         }
         else
@@ -39,8 +36,9 @@ public static class ShowFileConetnts
             mainwindow.MainTextBox.Text += "The path ";
             mainwindow.MainTextBox.Text += fullPath;
             mainwindow.MainTextBox.Text += " does not exist";
-            mainwindow.GetEndingText();
         }
+
+        mainwindow.GetEndingText();
     }
 }
 

@@ -10,10 +10,10 @@ public static class FindTextInFile
 
         var splitCommand = cutCommand.Split(' ').ToList();
 
-        if (splitCommand.Count == 3)
+        if (splitCommand.Count == 2)
         {
             var text = splitCommand[0];
-            var fileName = splitCommand[2];
+            var fileName = splitCommand[1];
 
             var fullPath = path + fileName;
 

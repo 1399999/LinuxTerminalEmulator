@@ -44,13 +44,11 @@ public static class MoveFile
                 mainwindow.MainTextBox.Text += copyFile.Name;
                 mainwindow.MainTextBox.Text += " successfully moved to ";
                 mainwindow.MainTextBox.Text += toDir.Name;
-                mainwindow.GetEndingText();
             }
             catch (Exception ex)
             {
                 mainwindow.MainTextBox.Text += "\n";
                 mainwindow.MainTextBox.Text += ex;
-                mainwindow.GetEndingText();
             }
         }
         else
@@ -59,7 +57,8 @@ public static class MoveFile
             mainwindow.MainTextBox.Text += "The command ";
             mainwindow.MainTextBox.Text += LineModel.LastLineCommand;
             mainwindow.MainTextBox.Text += " is not valid";
-            mainwindow.GetEndingText();
         }
+
+        mainwindow.GetEndingText();
     }
 }

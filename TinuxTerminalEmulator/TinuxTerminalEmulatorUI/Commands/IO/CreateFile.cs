@@ -23,7 +23,6 @@ public static class CreateFile
                 mainwindow.MainTextBox.Text += "The file ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully created.";
-                mainwindow.GetEndingText();
             }
             else
             {
@@ -31,7 +30,6 @@ public static class CreateFile
                 mainwindow.MainTextBox.Text += "The file ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " alrady exists.";
-                mainwindow.GetEndingText();
             }
 
         }
@@ -39,7 +37,8 @@ public static class CreateFile
         {
             mainwindow.MainTextBox.Text += "\n";
             mainwindow.MainTextBox.Text += "An error occured while create the directory.";
-            mainwindow.GetEndingText();
         }
+
+        mainwindow.GetEndingText();
     }
 }

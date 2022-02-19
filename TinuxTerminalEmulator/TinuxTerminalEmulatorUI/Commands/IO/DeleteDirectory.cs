@@ -23,7 +23,6 @@ public static class DeleteDirectory
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
-                mainwindow.GetEndingText();
             }
             else if (File.Exists(fullPath))
             {
@@ -35,7 +34,6 @@ public static class DeleteDirectory
                 mainwindow.MainTextBox.Text += "The file ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
-                mainwindow.GetEndingText();
             }
             else
             {
@@ -43,7 +41,6 @@ public static class DeleteDirectory
                 mainwindow.MainTextBox.Text += "The path ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " does not exist";
-                mainwindow.GetEndingText();
             }
 
         }
@@ -51,7 +48,6 @@ public static class DeleteDirectory
         {
             mainwindow.MainTextBox.Text += "\n";
             mainwindow.MainTextBox.Text += "An error occured while deleting the directory.";
-            mainwindow.GetEndingText();
         }
     }
 
@@ -78,7 +74,6 @@ public static class DeleteDirectory
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
-                mainwindow.GetEndingText();
             }
             else
             {
@@ -86,14 +81,14 @@ public static class DeleteDirectory
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += path;
                 mainwindow.MainTextBox.Text += " contans other directories/files so it can olny be deleted by using the rm command.";
-                mainwindow.GetEndingText();
             }
         }
         catch
         {
             mainwindow.MainTextBox.Text += "\n";
             mainwindow.MainTextBox.Text += "An error occured while deleting the directory.";
-            mainwindow.GetEndingText();
         }
+
+        mainwindow.GetEndingText();
     }
 }

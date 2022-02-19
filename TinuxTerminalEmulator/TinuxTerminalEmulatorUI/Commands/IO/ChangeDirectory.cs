@@ -30,8 +30,6 @@ public static class ChangeDirectory
             }
 
             LineModel.LastLineDirectory = newPath;
-
-            mainwindow.GetEndingText();
         }
         else
         {
@@ -45,8 +43,6 @@ public static class ChangeDirectory
                 {
                     LineModel.LastLineDirectory += cutCommand;
                     LineModel.LastLineDirectory += "\\";
-
-                    mainwindow.GetEndingText();
                 }
                 else
                 {
@@ -54,7 +50,6 @@ public static class ChangeDirectory
                     mainwindow.MainTextBox.Text += "The directory ";
                     mainwindow.MainTextBox.Text += fullPath;
                     mainwindow.MainTextBox.Text += " deos not exist.";
-                    mainwindow.GetEndingText();
                 }
 
             }
@@ -62,9 +57,10 @@ public static class ChangeDirectory
             {
                 mainwindow.MainTextBox.Text += "\n";
                 mainwindow.MainTextBox.Text += "An error occured while create the directory.";
-                mainwindow.GetEndingText();
             }
         }
+
+        mainwindow.GetEndingText();
     }   
 }
 
