@@ -13,7 +13,7 @@ public static class List
 
             foreach (var drive in drives)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += drive.ToString();
             }
         }
@@ -78,7 +78,7 @@ public static class List
                             postfix2 = "KB";
                         }
 
-                        mainwindow.MainTextBox.Text += "\n";
+                        mainwindow.WriteNewLine();
                         mainwindow.MainTextBox.Text += drive.ToString();
                         mainwindow.MainTextBox.Text += "    ";
                         mainwindow.MainTextBox.Text += result2;
@@ -103,7 +103,7 @@ public static class List
             {
                 foreach (var drive in drives)
                 {
-                    mainwindow.MainTextBox.Text += "\n";
+                    mainwindow.WriteNewLine();
                     mainwindow.MainTextBox.Text += drive.ToString();
                     mainwindow.MainTextBox.Text += "   ";
                     mainwindow.MainTextBox.Text += drive.DriveType;
@@ -113,7 +113,7 @@ public static class List
             {
                 foreach (var drive in drives)
                 {
-                    mainwindow.MainTextBox.Text += "\n";
+                    mainwindow.WriteNewLine();
                     mainwindow.MainTextBox.Text += drive.ToString();
                     mainwindow.MainTextBox.Text += "   ";
                     mainwindow.MainTextBox.Text += drive.TotalSize;
@@ -123,7 +123,7 @@ public static class List
             {
                 foreach (var drive in drives)
                 {
-                    mainwindow.MainTextBox.Text += "\n";
+                    mainwindow.WriteNewLine();
                     mainwindow.MainTextBox.Text += drive.ToString();
                     mainwindow.MainTextBox.Text += "   ";
                     mainwindow.MainTextBox.Text += drive.AvailableFreeSpace;
@@ -131,7 +131,7 @@ public static class List
             }
             else
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "Unknown proterty:";
                 mainwindow.MainTextBox.Text += kiloCutCommand;
             }

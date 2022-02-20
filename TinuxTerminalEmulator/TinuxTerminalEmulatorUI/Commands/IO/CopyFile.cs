@@ -36,20 +36,20 @@ public static class CopyFile
                     File.WriteAllLines(toCombinedDir, fileLine);
                 }
 
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += copyFile.Name;
                 mainwindow.MainTextBox.Text += " successfully copied to ";
                 mainwindow.MainTextBox.Text += toDir.Name;
             }
             catch
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "An error occured while copying the file.";
             }
         }
         else
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "The command ";
             mainwindow.MainTextBox.Text += LineModel.LastLineCommand;
             mainwindow.MainTextBox.Text += " is not valid";

@@ -66,13 +66,13 @@ public static class Command
         }
         else if (LineModel.LastLineCommand == "pwd")
         {
-            mainwindow.MainTextBox.Text += "\n";
-            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
+            mainwindow.WriteNewLine();
+            mainwindow.MainTextBox.Text += LineModel.LastLineDirectory; 
             mainwindow.GetEndingText();
         }
         else
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "The command is unregognized.";
             mainwindow.GetEndingText();
         }
@@ -80,13 +80,14 @@ public static class Command
 
     public static void GetEndingText(this MainWindow mainwindow)
     {
-        mainwindow.MainTextBox.Text += "\n\n";
+        mainwindow.WriteNewLine();
+        mainwindow.WriteNewLine();
         mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
         mainwindow.MainTextBox.Text += "> ";
     }
     public static void GetEndingTextSpecial(this MainWindow mainwindow)
     {
-        mainwindow.MainTextBox.Text += "\n";
+        mainwindow.WriteNewLine();
         mainwindow.MainTextBox.Text += LineModel.LastLineDirectory;
         mainwindow.MainTextBox.Text += "> ";
     }

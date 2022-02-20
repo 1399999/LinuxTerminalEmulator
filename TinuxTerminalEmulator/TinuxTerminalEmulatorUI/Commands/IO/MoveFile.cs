@@ -40,20 +40,20 @@ public static class MoveFile
                     copyFile.Delete();
                 }
 
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += copyFile.Name;
                 mainwindow.MainTextBox.Text += " successfully moved to ";
                 mainwindow.MainTextBox.Text += toDir.Name;
             }
             catch (Exception ex)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += ex;
             }
         }
         else
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "The command ";
             mainwindow.MainTextBox.Text += LineModel.LastLineCommand;
             mainwindow.MainTextBox.Text += " is not valid";

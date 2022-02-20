@@ -27,7 +27,7 @@ public static class FindTextInFile
                 {
                     if (line.Includes(text))
                     {
-                        mainwindow.MainTextBox.Text += "\n";
+                        mainwindow.WriteNewLine();
                         mainwindow.MainTextBox.Text += LineNumber;
                         mainwindow.MainTextBox.Text += "   ";
                         mainwindow.MainTextBox.Text += line;
@@ -39,7 +39,7 @@ public static class FindTextInFile
         }
         else
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "Invalid number of spaces.";
         }
 

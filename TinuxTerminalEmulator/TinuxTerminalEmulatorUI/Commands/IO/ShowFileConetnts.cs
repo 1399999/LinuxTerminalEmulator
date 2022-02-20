@@ -19,20 +19,20 @@ public static class ShowFileConetnts
 
                 foreach (var line in lines)
                 {
-                    mainwindow.MainTextBox.Text += "\n";
+                    mainwindow.WriteNewLine();
                     mainwindow.MainTextBox.Text += line;
                 }
             }
             catch
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "An error occured while trying to display the contents of ";
                 mainwindow.MainTextBox.Text += cutCommand;
             }
         }
         else
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "The path ";
             mainwindow.MainTextBox.Text += fullPath;
             mainwindow.MainTextBox.Text += " does not exist";

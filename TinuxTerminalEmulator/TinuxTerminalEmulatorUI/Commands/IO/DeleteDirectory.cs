@@ -19,7 +19,7 @@ public static class DeleteDirectory
 
                 dir.Delete();
 
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
@@ -30,14 +30,14 @@ public static class DeleteDirectory
 
                 file.Delete();
 
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The file ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
             }
             else
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The path ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " does not exist";
@@ -46,7 +46,7 @@ public static class DeleteDirectory
         }
         catch
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "An error occured while deleting the directory.";
         }
     }
@@ -70,14 +70,14 @@ public static class DeleteDirectory
             {
                 dir.Delete();
 
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully deleted.";
             }
             else
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += path;
                 mainwindow.MainTextBox.Text += " contans other directories/files so it can olny be deleted by using the rm command.";
@@ -85,7 +85,7 @@ public static class DeleteDirectory
         }
         catch
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "An error occured while deleting the directory.";
         }
 

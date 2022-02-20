@@ -46,17 +46,17 @@ public static class ChangeDirectory
                 }
                 else
                 {
-                    mainwindow.MainTextBox.Text += "\n";
+                    mainwindow.WriteNewLine();
                     mainwindow.MainTextBox.Text += "The directory ";
                     mainwindow.MainTextBox.Text += fullPath;
-                    mainwindow.MainTextBox.Text += " deos not exist.";
+                    mainwindow.MainTextBox.Text += " does not exist.";
                 }
 
             }
             catch
             {
-                mainwindow.MainTextBox.Text += "\n";
-                mainwindow.MainTextBox.Text += "An error occured while create the directory.";
+                mainwindow.WriteNewLine();
+                mainwindow.MainTextBox.Text += " An error occured while changing the directory.";
             }
         }
 

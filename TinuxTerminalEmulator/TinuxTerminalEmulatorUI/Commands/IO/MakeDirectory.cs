@@ -18,14 +18,14 @@ public static class MakeDirectory
             {
                 newDir.Create();
 
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " was succesfully created.";
             }
             else
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += "The directory ";
                 mainwindow.MainTextBox.Text += fullPath;
                 mainwindow.MainTextBox.Text += " alrady exists.";
@@ -34,7 +34,7 @@ public static class MakeDirectory
         }
         catch
         {
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += "An error occured while create the directory.";
         }
 

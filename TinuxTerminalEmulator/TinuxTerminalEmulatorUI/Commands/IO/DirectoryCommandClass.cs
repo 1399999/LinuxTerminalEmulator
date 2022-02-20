@@ -13,7 +13,7 @@ public static class DirectoryCommandClass
         {
             var cutDir = dir.Substring(pathLength);
 
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += cutDir;
             mainwindow.MainTextBox.Text += "           <DIR>";
         }
@@ -22,7 +22,7 @@ public static class DirectoryCommandClass
         {
             var cutFile = file.Substring(pathLength);
 
-            mainwindow.MainTextBox.Text += "\n";
+            mainwindow.WriteNewLine();
             mainwindow.MainTextBox.Text += cutFile;
         }
 
@@ -45,7 +45,7 @@ public static class DirectoryCommandClass
         {
             foreach (FileInfo file in fileDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += file;
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += file.Length;
@@ -55,7 +55,7 @@ public static class DirectoryCommandClass
         {
             foreach (FileInfo file in fileDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += file;
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += file.CreationTime;
@@ -63,7 +63,7 @@ public static class DirectoryCommandClass
 
             foreach (var directory in dirDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += directory;
                 mainwindow.MainTextBox.Text += "                     <DIR>                      ";
                 mainwindow.MainTextBox.Text += directory.CreationTime;
@@ -73,7 +73,7 @@ public static class DirectoryCommandClass
         {
             foreach (FileInfo file in fileDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += file;
                 mainwindow.MainTextBox.Text += "                     <DIR>                      ";
                 mainwindow.MainTextBox.Text += file.Attributes;
@@ -81,7 +81,7 @@ public static class DirectoryCommandClass
 
             foreach (var directory in dirDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += directory;
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += directory.Attributes;
@@ -91,7 +91,7 @@ public static class DirectoryCommandClass
         {
             foreach (FileInfo file in fileDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += file;
                 mainwindow.MainTextBox.Text += "                     ";
                 mainwindow.MainTextBox.Text += file.Length;
@@ -103,7 +103,7 @@ public static class DirectoryCommandClass
 
             foreach (var directory in dirDirs)
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += directory;
                 mainwindow.MainTextBox.Text += "                     <DIR>                      ";
                 mainwindow.MainTextBox.Text += directory.CreationTime;

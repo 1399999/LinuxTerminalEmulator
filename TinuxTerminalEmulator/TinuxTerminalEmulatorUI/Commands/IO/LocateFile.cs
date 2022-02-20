@@ -18,7 +18,7 @@ public static class LocateFile
 
             if (cutDirName.Contains(cutCommand))
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += cutDirName;
                 mainwindow.MainTextBox.Text += "              <DIR>";
             }
@@ -30,7 +30,7 @@ public static class LocateFile
 
             if (cutFileName.Contains(cutCommand))
             {
-                mainwindow.MainTextBox.Text += "\n";
+                mainwindow.WriteNewLine();
                 mainwindow.MainTextBox.Text += cutFileName;
             }
         }
