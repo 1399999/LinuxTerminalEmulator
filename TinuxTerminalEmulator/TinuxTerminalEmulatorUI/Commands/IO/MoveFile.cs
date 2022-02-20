@@ -45,10 +45,10 @@ public static class MoveFile
                 mainwindow.MainTextBox.Text += " successfully moved to ";
                 mainwindow.MainTextBox.Text += toDir.Name;
             }
-            catch (Exception ex)
+            catch
             {
                 mainwindow.WriteNewLine();
-                mainwindow.MainTextBox.Text += ex;
+                mainwindow.MainTextBox.Text += "An error occured.";
             }
         }
         else

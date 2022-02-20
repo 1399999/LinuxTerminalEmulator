@@ -60,6 +60,10 @@ public static class Command
         {
             mainwindow.ListCommand();
         }
+        else if (LineModel.LastLineCommand.Contains("diff "))
+        {
+            mainwindow.FindDifferenceCommand();
+        }
         else if (LineModel.LastLineCommand == "exit")
         {
             mainwindow.Close();

@@ -1,4 +1,5 @@
 ﻿namespace LinuxTerminalEmulatorUI;
+
 public static class MakeDirectory
     {
     public static void MakeDirectoryCommand(this MainWindow mainwindow)
